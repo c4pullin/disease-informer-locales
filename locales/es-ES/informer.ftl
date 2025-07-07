@@ -306,6 +306,11 @@ cmd-deletemydata = deletemydata
     .delete-info =  The only data we keep is just your user id and the guild id to save your progress in the trainer command.
                     Do you really wish for all of your data to be deleted?
                     There is no way to reverse this process.
+    .timeout = Took you too long to confirm.
+    .confirmed-nodata = You didn't have any data to delete.
+    .confirmed = Your data has been deleted.
+    .cancelled = Okay, not doing anything.
+
 
 cmd-leaderboard = clasificación
     .description = Leaderboard for all the pro doctors!

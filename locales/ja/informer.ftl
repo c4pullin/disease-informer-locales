@@ -307,6 +307,10 @@ cmd-deletemydata = データ削除
     .delete-info = トレーナーコマンドの進行状況を保存するため、我々が保持するデータは、あなたのユーザーIDとギルドIDだけです。
                    本当にすべてのデータを削除したいのですか？
                    このプロセスを元に戻す方法はありません。
+    .timeout = Took you too long to confirm.
+    .confirmed-nodata = You didn't have any data to delete.
+    .confirmed = Your data has been deleted.
+    .cancelled = Okay, not doing anything.
 
 cmd-leaderboard = リーダーボード
     .description = すべてのプロドクターのリーダーボード！
