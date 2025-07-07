@@ -85,7 +85,7 @@ cmd-cure = cura
     .description = Te da la cura.
     .virus = { -virus }
     .virus-describe = El virus que quieres curar
-    .title = <:cure:1360719261454176353> Comó curar { $match_virus }:
+    .title = <:cure:1276978906875822101> Comó curar { $match_virus }:
     .not-found = { -no-virus-match }
     .last-update = Última actualización por { $last-editor }
 
@@ -96,7 +96,7 @@ cmd-information = información
     .virus = { -virus }
     .virus-describe = El virus del que quieres obtener información
     .not-found = { -no-virus-match }
-    .title = <:cure:1079423089479274680> Información sobre { $match_virus }
+    .title = <:cure:1276978906875822101> Información sobre { $match_virus }
     .symptoms = Síntomas
     .notes = Notas
     .last-update = Última actualización por { $last-editor }
