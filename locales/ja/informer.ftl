@@ -323,6 +323,7 @@ cmd-leaderboard = リーダーボード
     .xp-text = #{ NUMBER($rank) } | { $user } XP: `{ $xp }`
     .deleted-user = 削除ユーザー
     .top-5 = トップ5 ドクター :lab_coat:
+    .no-users = No users have used the doctortrainer in the guild yet...
 
 # Note: { $count } and { $times } are the same, the number of times the user cured the virus
 # { $virus } is the provided virus
