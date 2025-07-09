@@ -52,6 +52,7 @@ virus-useless = Useless
 virus-randpox = Randpox
 virus-thirsty = Thirsty
 virus-aylin = Aylin
+virus-ray = Ray
 
 # These are select options, but the room itself can be shown in text
 

@@ -52,6 +52,7 @@ virus-useless = 役に立たない
 virus-randpox = ランデポックス
 virus-thirsty = 喉が渇く
 virus-aylin = Aylin
+virus-ray = Ray
 
 # These are select options, but the room itself can be shown in text
 

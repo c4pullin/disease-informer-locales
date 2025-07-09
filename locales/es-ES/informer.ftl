@@ -52,6 +52,7 @@ virus-useless = Inútil
 virus-randpox = Viruela Rand
 virus-thirsty = Séd
 virus-aylin = Aylin
+virus-ray = Ray
 
 # These are select options, but the room itself can be shown in text
 
@@ -439,7 +440,7 @@ ctx-sync = sync
 Confirm =
     .confirm = Confirmar
     .cancel = Cancelar
-        .interaction-check-msg = No puedes hacer eso..."
+    .interaction-check-msg = No puedes hacer eso..."
     .timeout = Se agotó el tiempo de espera.
     .accepted = Confirmado.
     .denied = Anulado.
