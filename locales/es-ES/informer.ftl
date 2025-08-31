@@ -86,7 +86,7 @@ cmd-cure = cura
     .description = Te da la cura.
     .virus = { -virus }
     .virus-describe = El virus que quieres curar
-    .title = <:cure:1276978906875822101> Comó curar { $match_virus }:
+    .title = <:cure:1276978906875822101> Comó curar **{ $match_virus }**:
     .not-found = { -no-virus-match }
     .last-update = Última actualización por { $last-editor }
 
@@ -198,6 +198,8 @@ cmd-ship = emparejamiento
     .match-text = :heartpulse: **MATCHMAKING** :heartpulse:
                   :small_red_triangle_down: `{ $shipper }`
                   :small_red_triangle: `{ $person }`
+    .match-top = :twisted_rightwards_arrows: **{ $first_half }{ $second_half }**
+    .match-down = **{ $percentage }%** { $ship_bar } { $ship_result }
     .ship-0 = Awful :sob:
     .ship-10 = Bad :smiling_face_with_tear:
     .ship-20 = Pretty Low :frowning:
@@ -236,7 +238,7 @@ cmd-navigator = navigador
     .virus-describe = The virus you want a guide for
     .virus-notfound = Not a correct disease or the developper hasn't established the steps for the disease.
                       If you really want the disease to be added, do tell Capullin!
-    .title = Welcome to the navigator
+    .title = # Welcome to the navigator
     .guided-for = You will be guided for: **{ $virus }**
     .navigator-for = { $person }'s navigator
     .not-started-too-long = Took you too long to start!
@@ -250,20 +252,20 @@ cmd-navigator = navigador
     .end-thank-you = Thank you for using the navigator
     .end-helped = I hope it helped you :D
     .button-start = START
-    .guiding-for = Guiding for: { $virus }
-    .go-room = Go to room { $room }
+    .guiding-for = # Guiding for: **{ $virus }**
+    .go-room = Go to **{ $room }**
     .intensities = { $len ->
-        [3] ||{ NUMBER($int1) }|| { NUMBER($int2) } ||{ NUMBER($int3) }||
+        [3] ||{ NUMBER($int1) }|| **{ NUMBER($int2) }** ||{ NUMBER($int3) }||
         [2] { $hide ->
-             [1] ||{ NUMBER($int1) }|| { NUMBER($int2) }
-             *[0] { NUMBER($int1) } ||{ NUMBER($int2) }||
+             [1] ||{ NUMBER($int1) }|| **{ NUMBER($int2) }**
+             *[0] **{ NUMBER($int1) }** ||{ NUMBER($int2) }||
             }
-        *[1] { NUMBER($int1) }
+        *[1] **{ NUMBER($int1) }**
     }
-    .intensities-same = { $int1 }
+    .intensities-same = **{ $int1 }**
     .intensity-is = Intensity is { $intensity }
-    .step-show = Step { NUMBER($current) } out of { NUMBER($total) }
-    .cured-at = Cured at { NUMBER($percentage) }%
+    .step-show = Step **{ NUMBER($current) }** out of **{ NUMBER($total) }**
+    .cured-at = Cured at **{ NUMBER($percentage) }%**
     .status-start = START
     .status-end = END
     .status-reset = RESET

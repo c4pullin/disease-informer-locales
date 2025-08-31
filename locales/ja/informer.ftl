@@ -86,7 +86,7 @@ cmd-cure = キュア
     .description = 治療方法を上げます。
     .virus = { -virus }
     .virus-describe = 治療方法を知りたいウィルス
-    .title = <:cure:1276978906875822101> { $match_virus }の治療方法：
+    .title = <:cure:1276978906875822101> **{ $match_virus }**の治療方法：
     .not-found = { -no-virus-match }
     .last-update = { $last-editor }による最終更新
 
@@ -199,6 +199,8 @@ cmd-ship = カップリング
     .match-text = :heartpulse: **カップリング** :heartpulse:
                   :small_red_triangle_down: `{ $shipper }`
                   :small_red_triangle: `{ $person }`
+    .match-top = :twisted_rightwards_arrows: **{ $first_half }{ $second_half }**
+    .match-down = **{ $percentage }%** { $ship_bar } { $ship_result }
     .ship-0 = 最悪 :sob:
     .ship-10 = 悪い :smiling_face_with_tear:
     .ship-20 = なかなか低い :frowning:
@@ -237,7 +239,7 @@ cmd-navigator = ナヴィゲーター
     .virus-describe = 案内が欲しいウイルス
     .virus-notfound = 正しい病気ではない、または開発者が病気の手順を確立していない。
                       もし本当にウイルスを追加したい場合は、Capullinに伝えてください。
-    .title = ナヴィゲーターへようこそ
+    .title = # ナヴィゲーターへようこそ
     .guided-for = あなたはのために導かれます：**{ $virus }**
     .navigator-for = { $person }のナヴィゲーター
     .not-started-too-long = 始めるのに時間がかかりすぎました!
@@ -251,20 +253,20 @@ cmd-navigator = ナヴィゲーター
     .end-thank-you = ナヴィゲーターを使ってくださってありがとうございました。
     .end-helped = お役に立てば幸いです:D
     .button-start = スタート
-    .guiding-for = ガイド:{ $virus }
+    .guiding-for = # ガイド:{ $virus }
     .go-room = { $room }に行け
     .intensities = { $len ->
-        [3] ||{ NUMBER($int1) }|| { NUMBER($int2) } ||{ NUMBER($int3) }||
+        [3] ||{ NUMBER($int1) }|| **{ NUMBER($int2) }** ||{ NUMBER($int3) }||
         [2] { $hide ->
-             [1] ||{ NUMBER($int1) }|| { NUMBER($int2) }
-             *[0] { NUMBER($int1) } ||{ NUMBER($int2) }||
+             [1] ||{ NUMBER($int1) }|| **{ NUMBER($int2) }**
+             *[0] **{ NUMBER($int1) }** ||{ NUMBER($int2) }||
             }
-        *[1] { NUMBER($int1) }
+        *[1] **{ NUMBER($int1) }**
     }
-    .intensities-same = { $int1 }
+    .intensities-same = **{ $int1 }**
     .intensity-is = 強度は { $intensity }
-    .step-show = ステップ{ NUMBER($current) }のうち{ NUMBER($total) }
-    .cured-at = 治療は{ NUMBER($percentage) }％
+    .step-show = ステップ**{ NUMBER($current) }**のうち**{ NUMBER($total) }**
+    .cured-at = 治療は**{ NUMBER($percentage) }％**
     .status-start = 始め
     .status-end = 終わり
     .status-reset = リセット
