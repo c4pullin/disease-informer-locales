@@ -1,0 +1,20 @@
+# https://github.com/mozilla/moz-l10n/wiki/L10nConfigPaths-file-format
+# Use with uv:
+# uv run --group localization compare-locales l10n.toml locales
+# uv run --group localization moz-l10n-lint l10n.toml
+basepath = "locales"
+
+locales = [
+  "en-US",
+  "es-ES",
+  "ja",
+]
+
+[[paths]]
+reference = "en-US/informer.ftl"
+l10n = "{locale}/informer.ftl"
+# Compare these locales (We don't need results from en-US):
+locales = [
+  "es-ES",
+  "ja",
+]
