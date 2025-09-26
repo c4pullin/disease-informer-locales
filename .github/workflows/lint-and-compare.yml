@@ -1,9 +1,13 @@
 name: Lint and compare locales
 
-on: [push, pull_request]
+on: 
+  push:
+    paths: '**.ftl'
+  pull_request:
+    paths: '**.ftl'
 
 jobs:
-  test:
+  lint-and-compare:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -17,7 +21,7 @@ jobs:
         run: uv sync --locked --group localization
 
       - name: Check lint
-        run: uv run --group localization moz-l10n-lint l10n.toml
+        run: uv run --group localization moz-l10n-lint -W l10n.toml
 
       - name: Compare locales
         run: uv run --group localization compare-locales l10n.toml locales
