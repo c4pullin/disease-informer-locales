@@ -81,14 +81,15 @@ status-same = 変化無し
 -no-virus-match = 君のクエリに対してのウイルスが見つからなかった
 
 # Note: { $match_virus } is the virus' name
-# { $last-editor } is the last editors's name
+# { $user } is the editors's name
+# { $time } is the discord formatted timestamp
 cmd-cure = キュア
     .description = 治療方法を上げます。
     .virus = { -virus }
     .virus-describe = 治療方法を知りたいウィルス
     .title = <:cure:1276978906875822101> **{ $match_virus }**の治療方法：
     .not-found = { -no-virus-match }
-    .last-update = { $last-editor }による最終更新
+    .last-update = { $user }による最終更新{ $time }
 
 # Note: { $match_virus} is the virus' name
 # { $last-editor } is the last editors's name
@@ -234,7 +235,7 @@ cmd-ship = カップリング
 # { $hide } is for if we should make the first or the second intensitity hidden
 # { $intensity} is the current intensities, formatted from .intensities or .intensities-same
 cmd-navigator = ナヴィゲーター
-    .description = 数が痛いからナヴィゲーター
+    .description = ウイルスを治すための手順を段階的に説明します
     .virus = { -virus }
     .virus-describe = 案内が欲しいウイルス
     .virus-notfound = 正しい病気ではない、または開発者が病気の手順を確立していない。
@@ -339,25 +340,37 @@ cmd-statistics = 統計
     .stats-for =  { $user }の統計
     .no-order = 順不同：
 
+group-update = アプデート 
+    .description = Update
 
 # Note: { $virus } is the virus' name
 # { $len } is the amount of intensities, from 1 to 3
 # { $bold } is whether we should bold the first intensity or the second
 # { $int1 }, { $int2 } and { $int3 } are the provided intensities
-cmd-newupdate = 新アプデート
-    .description = 新たなウイルスの編集方法
+cmd-update-cure = キュア
+    .description = ウイルスの編集方法
     .virus = { -virus }
     .virus-describe = 編集したいウイルス
     .symptom = symptom
     .symptom-describe = If you want to update the symptoms
-    .emb-title = 新アプデートへようこそ
+    .emb-title = アプデートへようこそ
     .emb-desc = **{ $virus }**を編集します
     .emb-cure-title = { $virus }の手順:
-    .editing = { $virus }を編集中
-    .step = 現在のステップ
+    .editing = { $user }は**{ $virus }**を編集中
+    .step = ステップ： **{ NUMBER($start) }**/**{ NUMBER($end) }**
     .room = 部屋
     .intensity = 強度
     .btn-start = スタート
+    .btn-previous = 前の25
+    .btn-next = 次の25
+    .btn-add = 手順追加
+    .btn-remove = 最終手順除外
+    .btn-edit = 手順編集
+    .btn-end = 変更確認
+    .btn-reset = 手順リセット
+    .btn-stop = 変更破棄
+    .select-step = ステップ { NUMBER($step) }
+    .choose-step = ここでステップを選択
     .choose-room = ここで部屋を選択
     .choose-intensity = ここで強度を選択
     .choose-symptom = Choose the symptom here
@@ -375,6 +388,16 @@ cmd-newupdate = 新アプデート
     .no-steps = :arrow_right: 1) -> ...
     .stopped-title = 編集プロセスを停止しました。
     .stopped-desc = その下には、これまでに編集したものがあります。
+    .success-edit = Succesfully updated **{ $virus }**.
+    .failure-edit = Failed to update **{ $virus }**.
+    .timed-out = Timed out.
+    .timed-out-not-started = Timed out.
+                             You didn't even start...
+    .interaction-check-msg = Only the current editor may interact.
+    .gap-in-intensities = There's a gap in the intensities
+                          Did you miss an intensity?
+    .cure-too-long = The cure doesn't fit within the limits discord established, so have a file with the cure inside.
+    .ask-limit-raise = Did Tim really add a cure this long? Ask c4pu to raise the limits if so...
 
 group-when = いつ
     .description = Check when a certain thing will occur
@@ -435,3 +458,8 @@ Confirm =
     .timeout = タイムアウト。。。
     .accepted = 確認致しました。
     .denied = 中止致しました。
+
+
+## Errors
+
+not-allowed-editor = あなたは許可された編集者ではありません。

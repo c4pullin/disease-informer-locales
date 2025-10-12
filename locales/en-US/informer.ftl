@@ -81,14 +81,15 @@ status-same = Same
 -no-virus-match = No disease found matching your query.
 
 # Note: { $match_virus } is the virus' name
-# { $last-editor } is the last editors's name
+# { $user } is the editors's name
+# { $time } is the discord formatted timestamp
 cmd-cure = cure
     .description = Gives you the cure.
     .virus = { -virus }
     .virus-describe = The virus you want to cure
     .title = <:cure:1276978906875822101> How to cure **{ $match_virus }**
     .not-found = { -no-virus-match }
-    .last-update = Last updated by { $last-editor }
+    .last-update = -# Last updated by { $user } { $time }
 
 # Note: { $match_virus} is the virus' name
 # { $last-editor } is the last editors's name
@@ -233,7 +234,7 @@ cmd-ship = ship
 # { $hide } is for if we should make the first or the second intensitity hidden
 # { $intensity} is the current intensities, formatted from .intensities or .intensities-same
 cmd-navigator = navigator
-    .description = A navigator because numbers hurts brain.
+    .description = Gives you step by step instructions to cure a virus.
     .virus = { -virus }
     .virus-describe = The virus you want a guide for
     .virus-notfound = Not a correct disease or the developper hasn't established the steps for the disease.
@@ -341,24 +342,38 @@ cmd-statistics = statistics
     .stats-for =  Statistics for { $user }
     .no-order = In no particular order:
 
+group-update = update
+    .description = Update
+
 # Note: { $virus } is the virus' name
 # { $len } is the amount of intensities, from 1 to 3
 # { $int1 }, { $int2 } and { $int3 } are the provided intensities
 # { $bold } is whether we should bold the first intensity or the second
-cmd-newupdate = newupdate
-    .description = A new way to update the cures
+# For all btn, try to make it as short as possible so it fits on mobile.
+cmd-update-cure = cure
+    .description = Update the cures (if you are an allowed editor)
     .virus = { -virus }
     .virus-describe = The virus to edit
     .symptom = symptom
-    .symptom-describe = If you want to update the symptoms
-    .emb-title = Welcome to the new editor
+    .symptom-describe = If you want to update the symptoms. Default is False.
+    .emb-title = Welcome to the editor
     .emb-desc = You will be editing **{ $virus }**
-    .emb-cure-title = Steps for { $virus }:
-    .editing = Currently editing { $virus }
-    .step = Current step
+    .emb-cure-title = Steps for **{ $virus }**:
+    .editing = { $user } is editing **{ $virus }**
+    .step = Current step: **{ NUMBER($start) }**/**{ NUMBER($end) }**
     .room = Room
     .intensity = Intensities
     .btn-start = START
+    .btn-previous = Previous 25
+    .btn-next = Next 25
+    .btn-add = Add a step
+    .btn-remove = Remove last step
+    .btn-edit = Edit step
+    .btn-end = Confirm changes
+    .btn-reset = Reset steps
+    .btn-stop = Discard changes
+    .select-step = Step { NUMBER($step) }
+    .choose-step = Choose the step here
     .choose-room = Choose the room here
     .choose-intensity = Choose the intensity here
     .choose-symptom = Choose the symptom here
@@ -376,6 +391,16 @@ cmd-newupdate = newupdate
     .no-steps = :arrow_right: 1) -> ...
     .stopped-title = Stopped the editing process 
     .stopped-desc = Below is what you had edited so far
+    .success-edit = Succesfully updated **{ $virus }**.
+    .failure-edit = Failed to update **{ $virus }**.
+    .timed-out = Timed out.
+    .timed-out-not-started = Timed out.
+                             You didn't even start...
+    .interaction-check-msg = Only the current editor may interact.
+    .gap-in-intensities = There's a gap in the intensities
+                          Did you miss an intensity?
+    .cure-too-long = The cure doesn't fit within the limits discord established, so have a file with the cure inside.
+    .ask-limit-raise = Did Tim really add a cure this long? Ask c4pu to raise the limits if so...
 
 group-when = when
     .description = Check when a certain thing will occur
@@ -411,6 +436,7 @@ cmd-calculatecuringtime = calculatecuringtime
     .virus = virus
     .speed_curing = speed_curing
 
+
 ## CTX commands
 
 # Note: fluent_compiler is being a bit weird, so as a workaround,
@@ -443,3 +469,8 @@ Confirm =
     .timeout = Timed out...
     .accepted = Confirmed.
     .denied = Cancelled.
+
+
+## Errors
+
+not-allowed-editor = You are not an allowed editor.
