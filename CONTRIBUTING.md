@@ -8,7 +8,7 @@ You can experiment with the syntax [here](https://projectfluent.org/play/)
 
 ## For an existing locale
 * [Fork](https://github.com/c4pullin/disease-informer-locales/fork) the repository
-* Edit the locale you wish (We only allow 1 locale per pull request.)
+* Edit the locale(s) you wish (Make sure to update for other locales, even if it's only putting the english text for locales you can't translate. Another translator can then update.)
 * [Check your work](#check-your-work)
 * [Submit](https://github.com/c4pullin/disease-informer-locales/compare) a pull request with the changes made.
 
