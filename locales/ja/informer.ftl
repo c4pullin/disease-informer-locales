@@ -214,16 +214,10 @@ cmd-ship = カップリング
     .ship-80 = いい :smile:
     .ship-90 = すごい :heart_eyes:
     .ship-100 = 完璧！ ❣
-    .error-value = Discord could not provide valid avatars
-    .error-notfound = { $count -> 
-        [one] One user does not have an avatar
-        *[other] All users do not have an avatar
-    }
-    .error-http = { $count -> 
-        [one] Failed to download an avatar
-        *[other] Failed to download all avatars
-    }
-    .error-discord = Internal connection error.
+    .error-value = Discord could not provide a valid avatar for { $user }
+    .error-notfound = { $user } does not have an avatar
+    .error-http = Failed to download { $user }'s avatar
+    .error-discord = Internal connection error trying to download { $user }'s avatar
 
 # Note: .status-reset doesn't actually show up, but is included for convenience's sake
 # { $virus } is the virus' name
