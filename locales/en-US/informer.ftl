@@ -90,6 +90,8 @@ cmd-cure = cure
     .title = <:cure:1276978906875822101> How to cure **{ $match_virus }**
     .not-found = { -no-virus-match }
     .last-update = -# Last updated by { $user } { $time }
+    .randpox-credits = **Credits**
+                       {""}***EleanorTheResearcher***, **koolcill**, **GotHitByNostalgia**, selinabfflobke, Yil_ley06, OhKiwie, notabot1017, Dazrite, BlazingFury_87, TheOriginalDoge105, sjsbhwh, HayBay819, klarius12, nickapr8, reaperhalox, Agile_Eureka20, KhunEdan, Ciccio130327, MKIIEYM9, mineshrl, asdfklarisse, swat35854, FakzXII.
 
 # Note: { $match_virus} is the virus' name
 # { $last-editor } is the last editors's name
@@ -213,10 +215,16 @@ cmd-ship = ship
     .ship-80 = Great :smile:
     .ship-90 = Amazing :heart_eyes:
     .ship-100 = PERFECT! ❣
-    .error-value = Discord could not provide a valid avatar for { $user }
-    .error-notfound = { $user } does not have an avatar
-    .error-http = Failed to download { $user }'s avatar
-    .error-discord = Internal connection error trying to download { $user }'s avatar
+    .error-value = Discord could not provide valid avatars
+    .error-notfound = { $count -> 
+        [one] One user does not have an avatar
+        *[other] All users do not have an avatar
+    }
+    .error-http = { $count -> 
+        [one] Failed to download an avatar
+        *[other] Failed to download all avatars
+    }
+    .error-discord = Internal connection error.
 
 # Note: .status-reset doesn't actually show up, but is included for convenience's sake
 # { $virus } is the virus' name
