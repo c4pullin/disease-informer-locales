@@ -93,7 +93,7 @@ cmd-cure = キュア
     .randpox-credits = **クレジット**
                        {""}***EleanorTheResearcher***, **koolcill**, **GotHitByNostalgia**, selinabfflobke, Yil_ley06, OhKiwie, notabot1017, Dazrite, BlazingFury_87, TheOriginalDoge105, sjsbhwh, HayBay819, klarius12, nickapr8, reaperhalox, Agile_Eureka20, KhunEdan, Ciccio130327, MKIIEYM9, mineshrl, asdfklarisse, swat35854, FakzXII.
 
-# Note: { $match_virus} is the virus' name
+# Note: { $match_virus } is the virus' name
 # { $last-editor } is the last editors's name
 cmd-information = インフォ
     .description = 情報を上げます。
@@ -107,7 +107,7 @@ cmd-information = インフォ
 
 cmd-getvirusvalue = getvirusvalue
     .description = Allows admins to get the raw values for quicker updates.
-    .virus = { -virus }
+        .virus = { -virus }
     .virus-describe = The virus you want the value.
     .key = key
     .key-describe = The type of information you want the value of.
@@ -229,7 +229,7 @@ cmd-ship = カップリング
 # { $len } is the total amount of itensities provided
 # { $int1 }, { $int2 } and { $int3 } are numbers, for the intensity
 # { $hide } is for if we should make the first or the second intensitity hidden
-# { $intensity} is the current intensities, formatted from .intensities or .intensities-same
+# { $intensity } is the current intensities, formatted from .intensities or .intensities-same
 cmd-navigator = ナヴィゲーター
     .description = ウイルスを治すための手順を段階的に説明します
     .virus = { -virus }
@@ -281,7 +281,7 @@ cmd-ping = ピング
     .api-latency = APIレイテンシ
     .online-since = アップして
     .latency-text = ```py
-                    { $emoji } {NUMBER($latency)} ms```
+                    { $emoji } { NUMBER($latency) } ms```
 
 cmd-updatetrainer = updatetrainer
     .description = Update the disease luck
@@ -372,7 +372,7 @@ cmd-update-cure = キュア
     .choose-symptom = Choose the symptom here
     .intensities = { $len ->
         [3] { NUMBER($int1) }や**{ NUMBER($int2) }**や{ NUMBER($int3) }
-        [2] {$bold ->
+        [2] { $bold ->
             [1] **{ NUMBER($int1) }**や{ NUMBER($int2) }
             *[0] { NUMBER($int1) }や**{ NUMBER($int2) }**
         }
@@ -418,27 +418,14 @@ cmd-invite = invite
     .contribute-locales = If you want the bot to be translated to a language supported by discord, or see any wrong translations, you can contribute by going to the following url: https://github.com/c4pullin/disease-informer-locales.
 
 
-# Command not ready yet, you can not translate these
-cmd-symptom-diagnostic = symptom_diagnostic
-    .description = Identify a patient's disease by their symptoms
-    .start = Start
-    .placeholder = Choose symptoms
-
-# Command not ready yet, you can not translate these
-cmd-calculatecuringtime = calculatecuringtime
-    .description = Calculate the time it takes to cure a disease
-    .virus = virus
-    .speed_curing = speed_curing
-
-
 ## CTX commands
 
 # Note: fluent_compiler is being a bit weird, so as a workaround,
 # { $synced } and { $count } are the same, which is the amount of commands.
 ctx-sync = sync
-    .synced-globally = {NUMBER($count)}コマンドをグローバルにシンクロナイズしました
+    .synced-globally = { NUMBER($count) }コマンドをグローバルにシンクロナイズしました
     .sync-guild-cmds-to-guid = { NUMBER($count) }ギルドコマンドをギルドへシンクロナイズしました
-    .sync-global-to-guild = {NUMBER($count) }グローバルコマンドをギルドへシンクロナイズしました
+    .sync-global-to-guild = { NUMBER($count) }グローバルコマンドをギルドへシンクロナイズしました
     .clear-guild-cmds = Cleared { $synced ->
         [one] { $count } guild command
         *[other] { $count } guild commands
@@ -454,6 +441,7 @@ Confirm =
     .timeout = タイムアウト。。。
     .accepted = 確認致しました。
     .denied = 中止致しました。
+    .error-logged = エラーは記録されました。後で修正される可能性があります...
 
 
 ## Errors

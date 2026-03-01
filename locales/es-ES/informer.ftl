@@ -94,7 +94,7 @@ cmd-cure = cura
                        {""}***EleanorTheResearcher***, **koolcill**, **GotHitByNostalgia**, selinabfflobke, Yil_ley06, OhKiwie, notabot1017, Dazrite, BlazingFury_87, TheOriginalDoge105, sjsbhwh, HayBay819, klarius12, nickapr8, reaperhalox, Agile_Eureka20, KhunEdan, Ciccio130327, MKIIEYM9, mineshrl, asdfklarisse, swat35854, FakzXII.
 
 
-# Note: { $match_virus} is the virus' name
+# Note: { $match_virus } is the virus' name
 # { $last-editor } is the last editors's name
 cmd-information = información
     .description = Responde con información
@@ -173,7 +173,7 @@ cmd-doctortrainer = entrenadordoctor
     .win-title = Congratulations!
     .win-desc = You have cured your patient from: { $virus-list }
     .virus-seperator = { $virus },{ " " }
-    .virus-end = {$virus} !
+    .virus-end = { $virus } !
     .levelup-title = Well done!
     .levelup-desc = You have leveled up to level { NUMBER($level) }
     .gainedxp-title = Great job !
@@ -229,7 +229,7 @@ cmd-ship = emparejamiento
 # { $len } is the total amount of itensities provided
 # { $int1 }, { $int2 } and { $int3 } are numbers, for the intensity
 # { $hide } is for if we should make the first or the second intensitity hidden
-# { $intensity} is the current intensities, formatted from .intensities or .intensities-same
+# { $intensity } is the current intensities, formatted from .intensities or .intensities-same
 cmd-navigator = navigador
     .description = Da instrucciones paso a paso para curar el virus que necesitas.
     .virus = { -virus }
@@ -281,7 +281,7 @@ cmd-ping = ping
     .api-latency = API Latency
     .online-since = Up since
     .latency-text = ```py
-                    { $emoji } {NUMBER($latency)} ms```
+                    { $emoji } { NUMBER($latency) } ms```
 
 cmd-updatetrainer = updatetrainer
     .description = Update the disease luck
@@ -298,7 +298,7 @@ cmd-statusmodify = statusmodify
     .status-describe = Make the disease enabled or not
 
 cmd-rank = rank
-    .description = Gets your current rank
+    .description = Gets your current rank for the doctortrainer
     .user-rank = user_rank
     .user-rank-describe = If you want to get the rank of a specific person.
 
@@ -333,7 +333,7 @@ cmd-statistics = estadísticas
     .description = Allows you to view your statistics
     .user-rank = user_rank
     .user-rank-describe = If you want to get the statistics of a specific person.
-    .stat-virus = {$count ->
+    .stat-virus = { $count ->
         [one] { $virus }: { NUMBER($times) } time.
         *[other] { $virus }: { NUMBER($times) } times.
     }
@@ -376,7 +376,7 @@ cmd-update-cure = cure
     .choose-symptom = Choose the symptom here
     .intensities = { $len ->
         [3] { NUMBER($int1) } O **{ NUMBER($int2) }** O { NUMBER($int3) }
-        [2] {$bold ->
+        [2] { $bold ->
             [1] **{ NUMBER($int1) }** O { NUMBER($int2) }
             *[0] { NUMBER($int1) } O **{ NUMBER($int2) }**
         }
@@ -421,18 +421,6 @@ cmd-invite = invite
     .embed-guild = Invite the bot to your guild
     .contribute-locales = If you want the bot to be translated to a language supported by discord, or see any wrong translations, you can contribute by going to the following url: https://github.com/c4pullin/disease-informer-locales.
 
-# Command not ready yet, you can not translate these
-cmd-symptom-diagnostic = symptom_diagnostic
-    .description = Identify a patient's disease by their symptoms
-    .start = Start
-    .placeholder = Choose symptom
-
-# Command not ready yet, you can not translate these
-cmd-calculatecuringtime = calculatecuringtime
-    .description = Calculate the time it takes to cure a disease
-    .virus = virus
-    .speed_curing = speed_curing
-
 
 ## CTX commands
 
@@ -466,6 +454,7 @@ Confirm =
     .timeout = Se agotó el tiempo de espera.
     .accepted = Confirmado.
     .denied = Anulado.
+    .error-logged = El error ha sido registrado y es posible que se solucionará en el futuro...
 
 
 ## Errors
